@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ladipo News Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="An independent student news report on used oil, waste and residential life at Ladipo Market, Lagos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= MASTHEAD ================= -->
+<div class="topbar">
+  <div class="wrap">
+    <span id="today">Lagos, Nigeria</span>
+    <span class="weather">Mushin · Lagos State</span>
+  </div>
+</div>
+
+<header class="mast" id="mast">
+  <div class="wrap">
+    <a class="brand" href="#" data-home>
+      <!-- Replace with: <span class="logo-slot"><img src="images/logo.png" alt=""></span> -->
+      <span class="logo-slot" aria-hidden="true">LOGO</span>
+      <span class="brand-name">Site Name</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#" data-home class="on">Home</a>
+      <a href="#story">The report</a>
+      <a href="#story" data-jump="voices">Residents</a>
+      <a href="#story" data-jump="next">What next</a>
+    </nav>
+    <button class="btn" data-video="documentary">Watch the film</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </div>
+  <div class="drawer" id="drawer">
+    <a href="#" data-home>Home</a>
+    <a href="#story">The report</a>
+    <a href="#story" data-jump="voices">Residents</a>
+    <a href="#story" data-jump="next">What next</a>
+    <a href="#" data-video="documentary">Watch the film</a>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<!-- ================= HOME VIEW ================= -->
+<main class="view" id="home">
+
+  <div class="trending">
+    <div class="wrap">
+      <span class="trending-label">Top stories</span>
+      <ul class="trend-list">
+        <li><a href="#story"><span class="trend-thumb ph"></span>The cost of keeping cars moving</a></li>
+        <li><a href="#story" data-jump="waste"><span class="trend-thumb ph v2"></span>Used oil and automotive waste</a></li>
+        <li><a href="#story" data-jump="aranotu"><span class="trend-thumb ph v3"></span>Life above the shops on Aranotu Street</a></li>
+        <li><a href="#" data-video="tenant"><span class="trend-thumb ph v4"></span>Watch: a tenant speaks</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hero carousel: 3 photo slides + 1 video slide -->
+  <section class="hero wrap" aria-label="Featured">
+    <div class="carousel" id="carousel" aria-roledescription="carousel">
+      <div class="track" id="track">
+
+        <article class="slide" aria-roledescription="slide" aria-label="1 of 4">
+          <div class="ph"><span class="ph-label">Hero photo 1 · wide shot of Ladipo Market</span>
+            <!-- <img src="images/hero-1.jpg" alt="Ladipo Market, Mushin"> -->
+          </div>
+          <div class="slide-copy">
+            <span class="slide-tag">Environment</span>
+            <h2><a href="#story">At Ladipo, the cost of keeping cars moving is written into the environment</a></h2>
+            <div class="slide-meta">Reporter name · 6 min read</div>
+          </div>
+        </article>
+
+        <article class="slide" aria-roledescription="slide" aria-label="2 of 4">
+          <div class="ph v2"><span class="ph-label">Hero photo 2 · used oil or waste</span>
+            <!-- <img src="images/hero-2.jpg" alt=""> -->
+          </div>
+          <div class="slide-copy">
+            <span class="slide-tag">Evidence</span>
+            <h2><a href="#story" data-jump="waste">Used oil and waste at the heart of the market</a></h2>
+            <div class="slide-meta">Photographs from Ladipo</div>
+          </div>
+        </article>
+
+        <article class="slide" aria-roledescription="slide" aria-label="3 of 4">
+          <div class="ph v3"><span class="ph-label">Hero photo 3 · No. 19, Aranotu Street</span>
+            <!-- <img src="images/hero-3.jpg" alt=""> -->
+          </div>
+          <div class="slide-copy">
+            <span class="slide-tag">Community</span>
+            <h2><a href="#story" data-jump="aranotu">Living upstairs from the trade</a></h2>
+            <div class="slide-meta">No. 19, Aranotu Street</div>
+          </div>
+        </article>
+
+        <article class="slide" aria-roledescription="slide" aria-label="4 of 4" data-kind="video">
+          <div class="ph v4"><span class="ph-label">Video thumbnail · documentary</span>
+            <!-- <img src="images/documentary-thumb.jpg" alt=""> -->
+          </div>
+          <button class="play-btn" data-video="documentary" aria-label="Play the documentary"></button>
+          <div class="slide-copy">
+            <span class="slide-tag video">Documentary</span>
+            <h2>Watch the Ladipo documentary</h2>
+            <div class="slide-meta">Filmed on site · Length</div>
+          </div>
+        </article>
+
+      </div>
+
+      <ol class="c-index" id="cIndex"></ol>
+      <div class="c-arrows">
+        <button id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button id="next" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+
+    <ol class="c-thumbs" id="cThumbs">
+      <li><button><span class="ph"></span><span><span class="t-num">1</span><span class="t-title">The cost of keeping cars moving</span></span></button></li>
+      <li><button><span class="ph v2"></span><span><span class="t-num">2</span><span class="t-title">Used oil and waste</span></span></button></li>
+      <li><button><span class="ph v3"></span><span><span class="t-num">3</span><span class="t-title">Living upstairs from the trade</span></span></button></li>
+      <li><button><span class="ph v4"><span class="mini-play"></span></span><span><span class="t-num">4</span><span class="t-title">Watch the documentary</span></span></button></li>
+    </ol>
+  </section>
+
+  <!-- Latest -->
+  <section class="section wrap">
+    <div class="sec-head">
+      <h2>Latest from Ladipo</h2>
+      <a href="#story">Read the full report</a>
+    </div>
+    <div class="grid-3">
+      <a class="card" href="#story" data-jump="intro">
+        <div class="media"><span class="cat">Environment</span><div class="ph"><span class="ph-label">Photo</span></div></div>
+        <h3>Inside Lagos's busiest spare-parts market</h3>
+        <p>How Ladipo keeps the city's vehicles running.</p>
+        <div class="meta"><span class="avatar">RN</span><span><b>Reporter name</b> · Date</span></div>
+      </a>
+      <a class="card" href="#story" data-jump="waste">
+        <div class="media"><span class="cat">Evidence</span><div class="ph v2"><span class="ph-label">Photo</span></div></div>
+        <h3>Used oil and automotive waste</h3>
+        <p>What the ground and drains show.</p>
+        <div class="meta"><span class="avatar">RN</span><span><b>Reporter name</b> · Date</span></div>
+      </a>
+      <a class="card" href="#story" data-jump="aranotu">
+        <div class="media"><span class="cat">Community</span><div class="ph v3"><span class="ph-label">Photo</span></div></div>
+        <h3>When commercial activity meets residential life</h3>
+        <p>The building at No. 19, Aranotu Street.</p>
+        <div class="meta"><span class="avatar">RN</span><span><b>Reporter name</b> · Date</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- In focus (feature + stack) -->
+  <section class="section wrap">
+    <div class="sec-head"><h2>In focus</h2></div>
+    <div class="feature">
+      <a class="card big" href="#story" data-jump="voices">
+        <div class="media"><span class="cat">Residents</span><div class="ph v4"><span class="ph-label">Residential photo</span></div></div>
+        <h3>Residents describe life above the workshops</h3>
+        <p>Tenants at No. 19, Aranotu Street explain what the trade downstairs means for their homes.</p>
+        <div class="meta"><span class="avatar">RN</span><span><b>Reporter name</b> · Date</span></div>
+      </a>
+      <div class="stack">
+        <a class="card" href="#" data-video="tenant">
+          <div class="media"><span class="cat">Video</span><div class="ph"><span class="ph-label">Interview clip</span></div></div>
+          <h3>Watch: a tenant speaks</h3>
+          <div class="meta">Interview · Length</div>
+        </a>
+        <a class="card" href="#story" data-jump="waste">
+          <div class="media"><span class="cat">Photos</span><div class="ph v2"><span class="ph-label">Photo</span></div></div>
+          <h3>The market in pictures</h3>
+          <div class="meta">Photo story</div>
+        </a>
+        <a class="card" href="#story" data-jump="next">
+          <div class="media"><span class="cat">Sanitation</span><div class="ph v3"><span class="ph-label">Photo</span></div></div>
+          <h3>Who cleans up after the trade?</h3>
+          <div class="meta">Analysis</div>
+        </a>
+        <a class="card" href="#story" data-jump="next">
+          <div class="media"><span class="cat">Oversight</span><div class="ph v4"><span class="ph-label">Photo</span></div></div>
+          <h3>What should happen next</h3>
+          <div class="meta">Analysis</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video band -->
+  <section class="wrap">
+    <div class="video-band">
+      <div class="video-band-in">
+        <div class="copy-side">
+          <h2>The documentary</h2>
+          <p>Footage recorded at Ladipo Market and Aranotu Street.</p>
+          <button class="btn" data-video="documentary">Play the film</button>
+        </div>
+        <div class="screen">
+          <div class="ph v2"><span class="ph-label">Video thumbnail</span></div>
+          <button class="play-btn" data-video="documentary" aria-label="Play the documentary"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= ARTICLE VIEW ================= -->
+<main class="view" id="story" hidden>
+  <div class="wrap">
+    <header class="art-head">
+      <a class="back" href="#" data-home>← Home</a>
+      <div class="tags"><span class="pill">Environment</span><span class="pill">Mushin, Lagos</span></div>
+      <h1>At Ladipo, the cost of keeping cars moving is written into the environment</h1>
+      <p class="dek">Used engine oil, discarded parts and blocked drains sit beside homes and shops in one of Lagos's busiest spare-parts markets.</p>
+      <div class="byline">
+        <span class="avatar">RN</span>
+        <div><b>Reporter name</b>HND Mass Communication · Date of publication</div>
+      </div>
+    </header>
+
+    <!-- MAIN / LEAD PHOTOGRAPH -->
+    <figure class="lead-fig">
+      <button class="frame ph" data-photo><span class="ph-label">Lead photo · wide shot of Ladipo Market</span></button>
+      <figcaption><b>Ladipo Market, Mushin.</b> One factual sentence describing the lead photo.</figcaption>
+    </figure>
+
+    <div class="art-body">
+      <aside class="toc" aria-label="In this story">
+        <p>In this story</p>
+        <ol>
+          <li><a href="#story" data-jump="intro">The market</a></li>
+          <li><a href="#story" data-jump="waste">Used oil and waste</a></li>
+          <li><a href="#story" data-jump="aranotu">Trade meets home</a></li>
+          <li><a href="#story" data-jump="voices">Residents speak</a></li>
+          <li><a href="#story" data-jump="next">What happens next</a></li>
+        </ol>
+      </aside>
+
+      <article class="prose">
+        <!-- OPENING PARAGRAPHS -->
+        <section id="intro">
+          <p class="lede">Ladipo, in the Mushin area of Lagos, is known across Nigeria as a market for automobile spare parts. Every day, traders, mechanics and buyers move through its streets, keeping the city's vehicles running.</p>
+          <p><span class="fill">Opening paragraph 2: what the reporter saw on arrival and the environmental issue being reported.</span></p>
+          <p><span class="fill">Opening paragraph 3: why it matters to the people who work and live here.</span></p>
+        </section>
+
+        <!-- DOCUMENTARY VIDEO 1 -->
+        <button class="vid-card" data-video="documentary">
+          <span class="thumb ph" style="position:relative;display:block"><span class="play-btn" aria-hidden="true"></span></span>
+          <span>
+            <span class="vt">Watch the documentary</span>
+            <span class="vs">Filmed at Ladipo Market · Length</span>
+          </span>
+        </button>
+
+        <!-- USED OIL AND AUTOMOTIVE WASTE -->
+        <section id="waste">
+          <h2>Used oil and automotive waste</h2>
+          <p><span class="fill">Describe what the photographs and reporting show. Only what was observed or can be supported.</span></p>
+          <figure>
+            <button class="frame ph v2" data-photo><span class="ph-label">Environmental photo 1</span></button>
+            <figcaption>Factual caption for environmental photo 1.</figcaption>
+          </figure>
+          <p><span class="fill">Paragraph on the drainage or waste shown in photo 2.</span></p>
+          <figure>
+            <button class="frame ph v3" data-photo><span class="ph-label">Environmental photo 2</span></button>
+            <figcaption>Factual caption for environmental photo 2.</figcaption>
+          </figure>
+        </section>
+
+        <!-- COMMERCIAL MEETS RESIDENTIAL -->
+        <section id="aranotu">
+          <h2>When commercial activity meets residential life</h2>
+          <p><span class="fill">Introduce No. 19, Aranotu Street, and the link between the businesses downstairs and the homes above.</span></p>
+          <figure>
+            <button class="frame ph v4" data-photo><span class="ph-label">Residential photo</span></button>
+            <figcaption><b>No. 19, Aranotu Street.</b> Caption for the residential photo.</figcaption>
+          </figure>
+        </section>
+
+        <!-- TENANT INTERVIEW -->
+        <section id="voices">
+          <h2>Residents speak</h2>
+          <p><span class="fill">Introduce the residents' experiences. Be precise about what tenants said.</span></p>
+          <blockquote>Exact quote from a tenant, as recorded and agreed.<cite>Name or description · Tenant, Aranotu Street</cite></blockquote>
+          <button class="vid-card" data-video="tenant">
+            <span class="thumb ph" style="position:relative;display:block"><span class="play-btn" aria-hidden="true"></span></span>
+            <span>
+              <span class="vt">Tenant interview</span>
+              <span class="vs">Short description of the clip · Length</span>
+            </span>
+          </button>
+        </section>
+
+        <!-- FINAL SECTIONS -->
+        <section id="next">
+          <h2>Who is responsible, and what happens next</h2>
+          <p><span class="fill">Responsibility, sanitation and environmental oversight.</span></p>
+          <p><span class="fill">Conclusion that returns to the central issue.</span></p>
+          <figure>
+            <button class="frame ph" data-photo><span class="ph-label">Closing photo (optional)</span></button>
+            <figcaption>Caption for the closing photo.</figcaption>
+          </figure>
+          <p class="credits">Photographs and video by Reporter name unless stated. Interviewees appear with their consent.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<div class="wrap">
+  <footer class="footer" id="about">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="#" data-home><span class="logo-slot" aria-hidden="true">LOGO</span><span class="brand-name">Site Name</span></a>
+        <p>An independent student news report from Ladipo Market, Lagos.</p>
+      </div>
+      <div>
+        <h4>The report</h4>
+        <ul>
+          <li><a href="#story" data-jump="intro">The market</a></li>
+          <li><a href="#story" data-jump="waste">Used oil and waste</a></li>
+          <li><a href="#story" data-jump="aranotu">Aranotu Street</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Watch</h4>
+        <ul>
+          <li><a href="#" data-video="documentary">Documentary</a></li>
+          <li><a href="#" data-video="tenant">Tenant interview</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li>Reporter name</li>
+          <li>HND Mass Communication</li>
+          <li>School name</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Site Name</span>
+      <span>A student journalism project</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Media viewer">
+  <div class="lb-in">
+    <button class="lb-close" id="lbClose">Close</button>
+    <div class="lb-stage" id="lbStage"></div>
+    <p id="lbCap"></p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
