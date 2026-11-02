@@ -109,8 +109,8 @@ const SLIDE_SECONDS = 7;
   }
   function pause(p) { paused = p; carousel.classList.toggle("paused", p); schedule(); }
 
-  $("#prev").addEventListener("click", () => go(i - 1));
-  $("#next").addEventListener("click", () => go(i + 1));
+  $("#cPrev").addEventListener("click", () => go(i - 1));
+  $("#cNext").addEventListener("click", () => go(i + 1));
   dots.forEach((d, n) => d.addEventListener("click", () => go(n)));
   thumbs.forEach((t, n) => t.addEventListener("click", () => go(n)));
   carousel.addEventListener("mouseenter", () => pause(true));
@@ -179,7 +179,7 @@ const SLIDE_SECONDS = 7;
     const p = e.target.closest("[data-photo]");
     if (p) {
       const fig = p.closest("figure");
-      openLb(`<div class="${p.className.replace("frame", "")}">${p.innerHTML}</div>`, fig ? fig.querySelector("figcaption").textContent : "");
+      openLb(`<div class="ph lb-photo">${p.innerHTML}</div>`, fig ? fig.querySelector("figcaption").textContent : "");
     }
   });
 
