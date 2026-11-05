@@ -6,7 +6,7 @@
    Example: for https://youtu.be/dQw4w9WgXcQ the ID is "dQw4w9WgXcQ". */
 const VIDEOS = {
   documentary: { id: "", title: "The Ladipo documentary" },
-  tenant:      { id: "", title: "Tenant interview" }
+  tenant:      { id: "", title: "Residents of No. 19, Aranotu Street" }
 };
 
 const SLIDE_SECONDS = 7;
@@ -66,7 +66,7 @@ const SLIDE_SECONDS = 7;
 
   /* ---------- Reading progress + TOC ---------- */
   const bar = $("#progress");
-  const secIds = ["intro", "waste", "aranotu", "voices", "next"];
+  const secIds = ["intro", "waste", "history", "aranotu", "next", "beyond", "sources"];
   function onScroll() {
     if (story.hidden) { bar.style.width = "0"; return; }
     const total = story.offsetHeight - innerHeight;

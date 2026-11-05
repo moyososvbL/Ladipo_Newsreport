@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ladipo News Report</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="An independent student news report on used oil, waste and residential life at Ladipo Market, Lagos.">
+<meta name="description" content="A closer look at used oil, waste management and the communities living alongside Ladipo, one of Lagos' busiest automobile trading centres.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
@@ -31,7 +31,7 @@
     <nav class="nav" aria-label="Main">
       <a href="#" data-home class="on">Home</a>
       <a href="#story">The report</a>
-      <a href="#story" data-jump="voices">Residents</a>
+      <a href="#story" data-jump="aranotu">Residents</a>
       <a href="#story" data-jump="next">What next</a>
     </nav>
     <button class="btn" data-video="documentary">Watch the film</button>
@@ -40,7 +40,7 @@
   <div class="drawer" id="drawer">
     <a href="#" data-home>Home</a>
     <a href="#story">The report</a>
-    <a href="#story" data-jump="voices">Residents</a>
+    <a href="#story" data-jump="aranotu">Residents</a>
     <a href="#story" data-jump="next">What next</a>
     <a href="#" data-video="documentary">Watch the film</a>
   </div>
@@ -55,9 +55,10 @@
       <span class="trending-label">Top stories</span>
       <ul class="trend-list">
         <li><a href="#story"><span class="trend-thumb ph"><img src="images/market-aerial.jpg" alt="" loading="lazy"></span>The cost of keeping cars moving</a></li>
-        <li><a href="#story" data-jump="waste"><span class="trend-thumb ph"><img src="images/parts-on-ground.jpg" alt="" loading="lazy"></span>Used oil and automotive waste</a></li>
-        <li><a href="#story" data-jump="aranotu"><span class="trend-thumb ph"><img src="images/engine-street.jpg" alt="" loading="lazy"></span>Life above the shops on Aranotu Street</a></li>
-        <li><a href="#" data-video="tenant"><span class="trend-thumb ph"><img src="images/market-crowd.jpg" alt="" loading="lazy"></span>Watch: a tenant speaks</a></li>
+        <li><a href="#story" data-jump="waste"><span class="trend-thumb ph"><img src="images/parts-on-ground.jpg" alt="" loading="lazy"></span>Used oil is not ordinary refuse</a></li>
+        <li><a href="#story" data-jump="history"><span class="trend-thumb ph"><img src="images/market-gate.jpg" alt="" loading="lazy"></span>Ladipo back in the headlines</a></li>
+        <li><a href="#story" data-jump="aranotu"><span class="trend-thumb ph"><img src="images/engine-street.jpg" alt="" loading="lazy"></span>Businesses downstairs, homes upstairs</a></li>
+        <li><a href="#" data-video="tenant"><span class="trend-thumb ph"><img src="images/market-crowd.jpg" alt="" loading="lazy"></span>Watch: residents speak</a></li>
       </ul>
     </div>
   </div>
@@ -80,8 +81,8 @@
           <div class="ph duo"><img class="bg" src="images/parts-on-ground.jpg" alt="" aria-hidden="true"><img class="fg" src="images/parts-on-ground.jpg" alt="Used car parts laid out on the ground at Ladipo"></div>
           <div class="slide-copy">
             <span class="slide-tag">Evidence</span>
-            <h2><a href="#story" data-jump="waste">Used oil and waste at the heart of the market</a></h2>
-            <div class="slide-meta">Photographs from Ladipo</div>
+            <h2><a href="#story" data-jump="waste">Used oil is not ordinary refuse</a></h2>
+            <div class="slide-meta">LASEPA guidance · Soil research</div>
           </div>
         </article>
 
@@ -89,7 +90,7 @@
           <div class="ph duo"><img class="bg" src="images/engine-street.jpg" alt="" aria-hidden="true"><img class="fg" src="images/engine-street.jpg" alt="Engines stacked along a street in Ladipo"></div>
           <div class="slide-copy">
             <span class="slide-tag">Community</span>
-            <h2><a href="#story" data-jump="aranotu">Living upstairs from the trade</a></h2>
+            <h2><a href="#story" data-jump="aranotu">When commercial space meets residential space</a></h2>
             <div class="slide-meta">No. 19, Aranotu Street</div>
           </div>
         </article>
@@ -115,8 +116,8 @@
 
     <ol class="c-thumbs" id="cThumbs">
       <li><button><span class="ph"><img src="images/market-aerial.jpg" alt="" loading="lazy"></span><span><span class="t-num">1</span><span class="t-title">The cost of keeping cars moving</span></span></button></li>
-      <li><button><span class="ph"><img src="images/parts-on-ground.jpg" alt="" loading="lazy"></span><span><span class="t-num">2</span><span class="t-title">Used oil and waste</span></span></button></li>
-      <li><button><span class="ph"><img src="images/engine-street.jpg" alt="" loading="lazy"></span><span><span class="t-num">3</span><span class="t-title">Living upstairs from the trade</span></span></button></li>
+      <li><button><span class="ph"><img src="images/parts-on-ground.jpg" alt="" loading="lazy"></span><span><span class="t-num">2</span><span class="t-title">Used oil is not ordinary refuse</span></span></button></li>
+      <li><button><span class="ph"><img src="images/engine-street.jpg" alt="" loading="lazy"></span><span><span class="t-num">3</span><span class="t-title">Where work meets home</span></span></button></li>
       <li><button><span class="ph"><img src="images/market-crowd.jpg" alt="" loading="lazy"><span class="mini-play"></span></span><span><span class="t-num">4</span><span class="t-title">Watch the documentary</span></span></button></li>
     </ol>
   </section>
@@ -130,20 +131,20 @@
     <div class="grid-3">
       <a class="card" href="#story" data-jump="intro">
         <div class="media"><span class="cat">Environment</span><div class="ph"><img src="images/market-gate.jpg" alt="Entrance sign of Ladipo International Auto Spare Parts Market" loading="lazy"></div></div>
-        <h3>Inside Lagos's busiest spare-parts market</h3>
-        <p>How Ladipo keeps the city's vehicles running.</p>
+        <h3>At Ladipo, the cost of keeping cars moving</h3>
+        <p>What happens to the oil, scrap and waste left behind.</p>
         <div class="meta"><span class="avatar">RN</span><span><b>Reporter name</b> · Date</span></div>
       </a>
       <a class="card" href="#story" data-jump="waste">
         <div class="media"><span class="cat">Evidence</span><div class="ph"><img src="images/parts-on-ground.jpg" alt="Used parts on the ground" loading="lazy"></div></div>
-        <h3>Used oil and automotive waste</h3>
-        <p>What the ground and drains show.</p>
+        <h3>Used oil is not ordinary refuse</h3>
+        <p>What LASEPA advises, and what research found in the soil.</p>
         <div class="meta"><span class="avatar">RN</span><span><b>Reporter name</b> · Date</span></div>
       </a>
       <a class="card" href="#story" data-jump="aranotu">
         <div class="media"><span class="cat">Community</span><div class="ph"><img src="images/engine-street.jpg" alt="Engines stacked along a street" loading="lazy"></div></div>
-        <h3>When commercial activity meets residential life</h3>
-        <p>The building at No. 19, Aranotu Street.</p>
+        <h3>When commercial space meets residential space</h3>
+        <p>Businesses downstairs, homes upstairs at No. 19, Aranotu Street.</p>
         <div class="meta"><span class="avatar">RN</span><span><b>Reporter name</b> · Date</span></div>
       </a>
     </div>
@@ -153,31 +154,31 @@
   <section class="section wrap">
     <div class="sec-head"><h2>In focus</h2></div>
     <div class="feature">
-      <a class="card big" href="#story" data-jump="voices">
-        <div class="media"><span class="cat">Residents</span><div class="ph"><img src="images/market-crowd.jpg" alt="People among engines at Ladipo" loading="lazy"></div></div>
-        <h3>Residents describe life above the workshops</h3>
-        <p>Tenants at No. 19, Aranotu Street explain what the trade downstairs means for their homes.</p>
+      <a class="card big" href="#story" data-jump="history">
+        <div class="media"><span class="cat">Background</span><div class="ph"><img src="images/market-crowd.jpg" alt="People among engines at Ladipo" loading="lazy"></div></div>
+        <h3>A problem that has returned to the headlines</h3>
+        <p>From the 2013 closure to the market being sealed in February 2026, environmental concerns at Ladipo are not new.</p>
         <div class="meta"><span class="avatar">RN</span><span><b>Reporter name</b> · Date</span></div>
       </a>
       <div class="stack">
         <a class="card" href="#" data-video="tenant">
           <div class="media"><span class="cat">Video</span><div class="ph"><img src="images/engine-street.jpg" alt="A Ladipo street" loading="lazy"></div></div>
-          <h3>Watch: a tenant speaks</h3>
+          <h3>Watch: residents of Aranotu Street</h3>
           <div class="meta">Interview · Length</div>
         </a>
-        <a class="card" href="#story" data-jump="waste">
+        <a class="card" href="#story" data-jump="history">
           <div class="media"><span class="cat">Photos</span><div class="ph"><img src="images/aerial-umbrellas.jpg" alt="Aerial view of the market" loading="lazy"></div></div>
           <h3>The market in pictures</h3>
           <div class="meta">Photo story</div>
         </a>
         <a class="card" href="#story" data-jump="next">
           <div class="media"><span class="cat">Sanitation</span><div class="ph"><img src="images/parts-on-ground.jpg" alt="Parts on bare ground" loading="lazy"></div></div>
-          <h3>Who cleans up after the trade?</h3>
+          <h3>Who is responsible for a cleaner market?</h3>
           <div class="meta">Analysis</div>
         </a>
-        <a class="card" href="#story" data-jump="next">
-          <div class="media"><span class="cat">Oversight</span><div class="ph"><img src="images/market-gate.jpg" alt="Market entrance" loading="lazy"></div></div>
-          <h3>What should happen next</h3>
+        <a class="card" href="#story" data-jump="beyond">
+          <div class="media"><span class="cat">Opinion</span><div class="ph"><img src="images/market-gate.jpg" alt="Market entrance" loading="lazy"></div></div>
+          <h3>The question beyond Ladipo</h3>
           <div class="meta">Analysis</div>
         </a>
       </div>
@@ -207,12 +208,12 @@
   <div class="wrap">
     <header class="art-head">
       <a class="back" href="#" data-home>← Home</a>
-      <div class="tags"><span class="pill">Environment</span><span class="pill">Mushin, Lagos</span></div>
+      <div class="tags"><span class="pill">Environment</span><span class="pill">Lagos</span></div>
       <h1>At Ladipo, the cost of keeping cars moving is written into the environment</h1>
-      <p class="dek">Used engine oil, discarded parts and blocked drains sit beside homes and shops in one of Lagos's busiest spare-parts markets.</p>
+      <p class="dek">A closer look at used oil, waste management and the communities living alongside one of Lagos' busiest automobile trading centres.</p>
       <div class="byline">
         <span class="avatar">RN</span>
-        <div><b>Reporter name</b>HND Mass Communication · Date of publication</div>
+        <div><b>Reporter name</b>Mushin, Lagos State · Publication date · 6 min read</div>
       </div>
     </header>
 
@@ -227,22 +228,24 @@
         <p>In this story</p>
         <ol>
           <li><a href="#story" data-jump="intro">The market</a></li>
-          <li><a href="#story" data-jump="waste">Used oil and waste</a></li>
-          <li><a href="#story" data-jump="aranotu">Trade meets home</a></li>
-          <li><a href="#story" data-jump="voices">Residents speak</a></li>
-          <li><a href="#story" data-jump="next">What happens next</a></li>
+          <li><a href="#story" data-jump="waste">Used oil</a></li>
+          <li><a href="#story" data-jump="history">Back in the headlines</a></li>
+          <li><a href="#story" data-jump="aranotu">Work and home</a></li>
+          <li><a href="#story" data-jump="next">Who is responsible</a></li>
+          <li><a href="#story" data-jump="beyond">Beyond Ladipo</a></li>
+          <li><a href="#story" data-jump="sources">Sources</a></li>
         </ol>
       </aside>
 
       <article class="prose">
         <!-- OPENING PARAGRAPHS -->
         <section id="intro">
-          <p class="lede">Ladipo, in the Mushin area of Lagos, is known across Nigeria as a market for automobile spare parts. Every day, traders, mechanics and buyers move through its streets, keeping the city's vehicles running.</p>
-          <p><span class="fill">Opening paragraph 2: what the reporter saw on arrival and the environmental issue being reported.</span></p>
-          <p><span class="fill">Opening paragraph 3: why it matters to the people who work and live here.</span></p>
+          <p class="lede"><span class="dateline">MUSHIN, Lagos —</span> At Ladipo, the movement of automobile parts is constant. Engines, gearboxes, tyres and other components change hands as traders and mechanics serve customers who come from across Lagos and beyond. But behind the market's commercial energy is an environmental question that cannot be separated from the work taking place there: what happens to the oil, scrap and other waste generated when vehicles are dismantled, repaired and serviced?</p>
+          <p>The issue is not simply whether the market looks clean on a particular day. It is whether used engine oil and other automotive waste are collected, stored and taken away safely; whether refuse is kept out of drains and roads; and whether people who live close to workshops and trading spaces are protected from the effects of day-to-day commercial activity.</p>
+          <p>Ladipo is an important centre of Nigeria's automobile spare-parts trade. Its scale supports livelihoods and keeps vehicles moving, but the same concentration of trading, repairs and waste-producing activity places pressure on the surrounding urban environment. The challenge is to ensure that the economic value of the market does not come at the expense of public spaces, drainage systems and nearby homes.</p>
         </section>
 
-        <!-- DOCUMENTARY VIDEO 1 -->
+        <!-- DOCUMENTARY VIDEO -->
         <button class="vid-card" data-video="documentary">
           <span class="thumb ph" style="position:relative;display:block"><img src="images/market-crowd.jpg" alt="" loading="lazy"><span class="play-btn" aria-hidden="true"></span></span>
           <span>
@@ -251,55 +254,98 @@
           </span>
         </button>
 
-        <!-- USED OIL AND AUTOMOTIVE WASTE -->
+        <!-- USED OIL -->
         <section id="waste">
-          <h2>Used oil and automotive waste</h2>
-          <p><span class="fill">Describe what the photographs and reporting show. Only what was observed or can be supported.</span></p>
+          <h2>Used oil is not ordinary refuse</h2>
+          <p>Used engine oil requires careful handling. It should be collected in suitable containers and transferred through appropriate recovery or disposal channels, rather than poured onto bare ground or into drains. The Lagos State Environmental Protection Agency (LASEPA) specifically advises businesses not to discharge used oil into drains or onto land, warning that oil can seep into the ground and pollute underground water. The agency also calls for proper oil-and-grease management and the use of covered waste receptacles.</p>
           <figure>
             <button class="frame tall ph" data-photo><img src="images/parts-on-ground.jpg" alt="Used car parts laid out on bare ground beside stalls" loading="lazy"></button>
             <figcaption>Used parts laid out on bare ground beside traders' stalls.</figcaption>
           </figure>
-          <p><span class="fill">Paragraph on the drainage or waste shown in photo 2.</span></p>
+          <aside class="callout">
+            <span class="callout-title">What LASEPA advises</span>
+            <ul>
+              <li>Do not pour used oil into drains or onto land</li>
+              <li>Manage oil and grease properly</li>
+              <li>Use covered waste receptacles</li>
+            </ul>
+          </aside>
+          <p>The concern is supported by research conducted at Ladipo and another Lagos automobile market. A study published in <em>Environmental Systems Research</em> examined soil samples from spent-oil-affected areas and nearby comparison sites. It reported changes in soil properties at the contaminated locations and found elevated copper in the affected soils, identifying a potential ecological concern if irresponsible disposal continues. The findings underline why visible oil stains should not be dismissed as a minor housekeeping problem.</p>
+        </section>
+
+        <!-- HISTORY -->
+        <section id="history">
+          <h2>A problem that has returned to the headlines</h2>
+          <p>Environmental concerns at Ladipo are not new.</p>
+          <ol class="timeline">
+            <li><span class="yr">2013</span><p>The market is temporarily closed. Reports describe government concerns about oil and waste pollution, refuse dumped into canals, and trading structures along drainage routes.</p></li>
+            <li><span class="yr">2020</span><p>Traders organise a clean-up and call for a filth-free market, warning that refuse entering a canal is contributing to blocked drainage.</p></li>
+            <li><span class="yr">Feb 2026</span><p>The Lagos State Government seals the market over repeated environmental infractions, including refuse dumped on road medians and the highway, and illegal street trading.</p></li>
+          </ol>
+          <p>The stated reasons for the 2026 enforcement action should be distinguished from the separate question of used-oil handling; together, however, they show the range of environmental pressures associated with the market and its surroundings.</p>
           <figure>
             <button class="frame ph" data-photo><img src="images/aerial-umbrellas.jpg" alt="Aerial view of scrap and parts stacked across the market" loading="lazy"></button>
             <figcaption>Exhausts, shock absorbers and scrap stacked across an open section of the market.</figcaption>
           </figure>
+          <p>Repeated clean-ups and enforcement actions can address immediate problems, but lasting improvement depends on routine waste collection, accessible disposal arrangements, clear responsibilities and consistent compliance by traders, workshop operators and market leadership.</p>
         </section>
 
-        <!-- COMMERCIAL MEETS RESIDENTIAL -->
+        <!-- COMMERCIAL MEETS RESIDENTIAL + TENANT INTERVIEW -->
         <section id="aranotu">
-          <h2>When commercial activity meets residential life</h2>
-          <p><span class="fill">Introduce No. 19, Aranotu Street, and the link between the businesses downstairs and the homes above.</span></p>
+          <h2>When commercial space meets residential space</h2>
+          <p>The environmental story does not end at the market boundary. Around Ladipo, homes and commercial activities can exist close together. At No. 19, Aranotu Street, the field reporting for this project examined a building where automobile-related businesses operate downstairs while people live in the same property.</p>
           <figure>
             <button class="frame tall ph" data-photo><img src="images/engine-street.jpg" alt="Engines stacked along a street, with buildings above" loading="lazy"></button>
             <figcaption><b>Ladipo.</b> Engines stacked along a street, with homes and offices on the floors above.</figcaption>
           </figure>
-        </section>
-
-        <!-- TENANT INTERVIEW -->
-        <section id="voices">
-          <h2>Residents speak</h2>
-          <p><span class="fill">Introduce the residents' experiences. Be precise about what tenants said.</span></p>
-          <blockquote>Exact quote from a tenant, as recorded and agreed.<cite>Name or description · Tenant, Aranotu Street</cite></blockquote>
+          <p>That arrangement raises practical questions about the separation of work and home: how are oil, parts and other materials stored; how are noise and movement managed; where does workshop waste go; and what measures are in place to prevent business activity from affecting residents? Interviews recorded with people at the address give the residents' perspective.</p>
           <button class="vid-card" data-video="tenant">
             <span class="thumb ph" style="position:relative;display:block"><img src="images/engine-street.jpg" alt="" loading="lazy"><span class="play-btn" aria-hidden="true"></span></span>
             <span>
-              <span class="vt">Tenant interview</span>
-              <span class="vs">Short description of the clip · Length</span>
+              <span class="vt">Residents of No. 19, Aranotu Street</span>
+              <span class="vs">Interview · Length</span>
             </span>
           </button>
+          <p>For residents, the quality of the immediate environment is part of everyday life. For businesses, keeping the premises and surrounding area safe is part of operating responsibly. The two interests should not be treated as competing demands.</p>
         </section>
 
-        <!-- FINAL SECTIONS -->
+        <!-- RESPONSIBILITY -->
         <section id="next">
-          <h2>Who is responsible, and what happens next</h2>
-          <p><span class="fill">Responsibility, sanitation and environmental oversight.</span></p>
-          <p><span class="fill">Conclusion that returns to the central issue.</span></p>
+          <h2>Who is responsible for a cleaner market?</h2>
+          <p>Responsibility is shared.</p>
+          <div class="roles">
+            <div><b>Traders and mechanics</b><span>Safe storage and hand-over of used oil, clean work areas, no waste in drains.</span></div>
+            <div><b>Market associations</b><span>Regular sanitation, clear disposal rules, working collection arrangements.</span></div>
+            <div><b>Property owners and operators</b><span>Consider the impact of business activity on people living in the same buildings.</span></div>
+            <div><b>Public agencies</b><span>Monitor compliance, respond to complaints, enforce rules consistently.</span></div>
+          </div>
+          <p>LASEPA lists investigation of land, water and air pollution complaints among the functions of its pollution-control work. The agency's published guidance also sets out expectations for proper used-oil management and waste handling.</p>
+          <p>The next step should go beyond periodic closure or a one-day clean-up. It should include reliable collection of used oil, designated storage points, routine removal of general refuse, clear drainage channels, public education and follow-up inspections. Where residents report a problem, their concerns should be documented and addressed, with the relevant operators given an opportunity to respond.</p>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section id="beyond">
+          <h2>The question beyond Ladipo</h2>
+          <p>Ladipo's importance to the automobile trade is clear. The environmental cost of that trade, however, should not be left for neighbouring residents, public drains or the wider city to absorb. A market can remain commercially active while adopting safer waste practices; in fact, a cleaner and better-managed environment is part of the long-term security of the businesses that depend on it.</p>
+          <blockquote>The people who work in the market and those who live around it share the same streets, drains and air.</blockquote>
+          <p>The test is not whether Ladipo can be cleaned after an enforcement action. It is whether traders, market leaders, property owners and government agencies can sustain standards that protect the environment every day. The people who work in the market and those who live around it share the same streets, drains and air. They should also share the benefits of a cleaner neighbourhood.</p>
           <figure>
             <button class="frame ph" data-photo><img src="images/market-gate.jpg" alt="Entrance sign of Ladipo International Auto Spare Parts Market" loading="lazy"></button>
             <figcaption>The entrance to Ladipo International Auto Spare Parts Market, Papa-Ajao, Mushin.</figcaption>
           </figure>
-          <p class="credits">Photographs and video by Reporter name unless stated. Interviewees appear with their consent.</p>
+        </section>
+
+        <!-- SOURCES -->
+        <section id="sources" class="sources">
+          <h2>Sources</h2>
+          <ol>
+            <li><a href="https://lasepa.gov.ng/laws-and-services/" target="_blank" rel="noopener">Lagos State Environmental Protection Agency (LASEPA), “Services – Laws and Services”</a></li>
+            <li><a href="https://doi.org/10.1186/s40068-024-00343-w" target="_blank" rel="noopener"><em>Environmental Systems Research</em>, “Disposal of spent oil into soils around auto parts markets impacts heavy metal concentrations and poses a potential ecological risk”</a></li>
+            <li><a href="https://punchng.com/lagos-seals-ladipo-market-over-environmental-infractions/" target="_blank" rel="noopener">PUNCH, “Lagos seals Ladipo market over environmental infractions”</a> · 9 Feb 2026</li>
+            <li><a href="https://guardian.ng/news/traders-advocate-for-filth-free-ladipo-market/" target="_blank" rel="noopener">The Guardian, “Traders advocate for filth-free Ladipo market”</a> · 21 Feb 2020</li>
+            <li><a href="https://www.channelstv.com/2013/03/11/fashola-re-opens-ladipo-market/" target="_blank" rel="noopener">Channels Television, “Fashola Re-Opens Ladipo Market”</a> · 11 Mar 2013</li>
+          </ol>
+          <p class="credits">This report combines field reporting at Ladipo with published research and public reporting. Interviewees appear with their consent.</p>
         </section>
       </article>
     </div>
@@ -312,21 +358,23 @@
     <div class="footer-top">
       <div>
         <a class="brand" href="#" data-home><span class="logo-slot" aria-hidden="true">LOGO</span><span class="brand-name">Site Name</span></a>
-        <p>An independent student news report from Ladipo Market, Lagos.</p>
+        <p>Used oil, waste and the communities living alongside Ladipo, Lagos.</p>
       </div>
       <div>
         <h4>The report</h4>
         <ul>
           <li><a href="#story" data-jump="intro">The market</a></li>
-          <li><a href="#story" data-jump="waste">Used oil and waste</a></li>
+          <li><a href="#story" data-jump="waste">Used oil</a></li>
+          <li><a href="#story" data-jump="history">Back in the headlines</a></li>
           <li><a href="#story" data-jump="aranotu">Aranotu Street</a></li>
+          <li><a href="#story" data-jump="sources">Sources</a></li>
         </ul>
       </div>
       <div>
         <h4>Watch</h4>
         <ul>
           <li><a href="#" data-video="documentary">Documentary</a></li>
-          <li><a href="#" data-video="tenant">Tenant interview</a></li>
+          <li><a href="#" data-video="tenant">Residents' interview</a></li>
         </ul>
       </div>
       <div>
