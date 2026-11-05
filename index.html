@@ -58,7 +58,7 @@
         <li><a href="#story" data-jump="waste"><span class="trend-thumb ph"><img src="images/blocked-drain.jpg" alt="" loading="lazy"></span>Used oil is not ordinary refuse</a></li>
         <li><a href="#story" data-jump="history"><span class="trend-thumb ph"><img src="images/refuse-and-drain.jpg" alt="" loading="lazy"></span>Ladipo back in the headlines</a></li>
         <li><a href="#story" data-jump="aranotu"><span class="trend-thumb ph"><img src="images/engine-store.jpg" alt="" loading="lazy"></span>Businesses downstairs, homes upstairs</a></li>
-        <li><a href="#" data-video="tenant"><span class="trend-thumb ph"><img src="images/residential-courtyard.jpg" alt="" loading="lazy"></span>Watch: residents speak</a></li>
+        <li><a href="#" data-video="documentary"><span class="trend-thumb ph"><img src="images/muddy-road.jpg" alt="" loading="lazy"></span>Watch the documentary</a></li>
       </ul>
     </div>
   </div>
@@ -101,7 +101,7 @@
           <div class="slide-copy">
             <span class="slide-tag video">Documentary</span>
             <h2>Watch the Ladipo documentary</h2>
-            <div class="slide-meta">Filmed on site · Length</div>
+            <div class="slide-meta">Filmed at Ladipo, Mushin</div>
           </div>
         </article>
 
@@ -161,10 +161,10 @@
         <div class="meta"><span class="avatar">RN</span><span><b>Reporter name</b> · Date</span></div>
       </a>
       <div class="stack">
-        <a class="card" href="#" data-video="tenant">
-          <div class="media"><span class="cat">Video</span><div class="ph"><img src="images/residential-courtyard.jpg" alt="Inside the residential part of the building" loading="lazy"></div></div>
-          <h3>Watch: residents of Aranotu Street</h3>
-          <div class="meta">Interview · Length</div>
+        <a class="card" href="#" data-video="documentary">
+          <div class="media"><span class="cat">Video</span><div class="ph"><img src="images/muddy-road.jpg" alt="A muddy road strewn with refuse near Ladipo" loading="lazy"><span class="card-play" aria-hidden="true"></span></div></div>
+          <h3>Watch the Ladipo documentary</h3>
+          <div class="meta">Documentary</div>
         </a>
         <a class="card" href="#story" data-jump="history">
           <div class="media"><span class="cat">Photos</span><div class="ph"><img src="images/flooded-street.jpg" alt="A waterlogged road near Ladipo" loading="lazy"></div></div>
@@ -191,12 +191,16 @@
       <div class="video-band-in">
         <div class="copy-side">
           <h2>The documentary</h2>
-          <p>Footage recorded at Ladipo Market and Aranotu Street.</p>
-          <button class="btn" data-video="documentary">Play the film</button>
+          <p>Footage recorded at Ladipo, Mushin.</p>
+          <button class="btn" data-video="documentary" data-target="bandPlayer">Play the film</button>
         </div>
         <div class="screen">
-          <div class="ph"><img src="images/flooded-street.jpg" alt="" loading="lazy"></div>
-          <button class="play-btn" data-video="documentary" aria-label="Play the documentary"></button>
+          <div class="player" id="bandPlayer">
+            <button class="player-cover" data-video="documentary" data-target="bandPlayer" aria-label="Play the documentary">
+              <span class="ph"><img src="images/flooded-street.jpg" alt="" loading="lazy"></span>
+              <span class="play-btn" aria-hidden="true"></span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -246,13 +250,16 @@
         </section>
 
         <!-- DOCUMENTARY VIDEO -->
-        <button class="vid-card" data-video="documentary">
-          <span class="thumb ph" style="position:relative;display:block"><img src="images/muddy-road.jpg" alt="" loading="lazy"><span class="play-btn" aria-hidden="true"></span></span>
-          <span>
-            <span class="vt">Watch the documentary</span>
-            <span class="vs">Filmed at Ladipo Market · Length</span>
-          </span>
-        </button>
+        <figure class="player-fig" id="film">
+          <div class="player" id="docPlayer">
+            <button class="player-cover" data-video="documentary" data-target="docPlayer" aria-label="Play the documentary">
+              <span class="ph"><img src="images/muddy-road.jpg" alt="" loading="lazy"></span>
+              <span class="play-btn" aria-hidden="true"></span>
+              <span class="player-label">Watch the documentary</span>
+            </button>
+          </div>
+          <figcaption><b>The Ladipo documentary.</b> Filmed at Ladipo, Mushin.</figcaption>
+        </figure>
 
         <!-- USED OIL -->
         <section id="waste">
@@ -306,13 +313,6 @@
             <figcaption><b>No. 19, Aranotu Street.</b> Left: engines and parts stored on the ground floor. Right: inside the residential part of the building.</figcaption>
           </figure>
           <p>That arrangement raises practical questions about the separation of work and home: how are oil, parts and other materials stored; how are noise and movement managed; where does workshop waste go; and what measures are in place to prevent business activity from affecting residents? Interviews recorded with people at the address give the residents' perspective.</p>
-          <button class="vid-card" data-video="tenant">
-            <span class="thumb ph" style="position:relative;display:block"><img src="images/residential-courtyard.jpg" alt="" loading="lazy"><span class="play-btn" aria-hidden="true"></span></span>
-            <span>
-              <span class="vt">Residents of No. 19, Aranotu Street</span>
-              <span class="vs">Interview · Length</span>
-            </span>
-          </button>
           <p>For residents, the quality of the immediate environment is part of everyday life. For businesses, keeping the premises and surrounding area safe is part of operating responsibly. The two interests should not be treated as competing demands.</p>
         </section>
 
@@ -385,7 +385,6 @@
         <h4>Watch</h4>
         <ul>
           <li><a href="#" data-video="documentary">Documentary</a></li>
-          <li><a href="#" data-video="tenant">Residents' interview</a></li>
         </ul>
       </div>
       <div>

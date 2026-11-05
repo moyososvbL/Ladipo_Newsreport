@@ -17,7 +17,7 @@ images/         Photos, logo and video thumbnails
 
 - **Logo and site name:** in `index.html`, replace `Site Name` and the `LOGO` box (search for `logo-slot`).
 - **Photos:** put files in `images/`, then replace each placeholder with an `<img src="images/your-photo.jpg" alt="...">` inside the matching `.ph` box. The commented `<img>` lines in the hero show where.
-- **Videos:** upload to YouTube as Unlisted, then paste each video ID into `VIDEOS` at the top of `js/main.js`.
+- **Video:** the documentary plays on the site from YouTube (ID `V7I5MCCqkts`). To change it, edit `VIDEOS` at the top of `js/main.js`.
 - **Article text:** replace the highlighted placeholder paragraphs in the article section.
 
 ## Deploy

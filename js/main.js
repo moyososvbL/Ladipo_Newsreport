@@ -2,12 +2,17 @@
    Ladipo News Report — interactions
    ========================================================= */
 
-/* Paste the YouTube video IDs here once the videos are uploaded (unlisted).
-   Example: for https://youtu.be/dQw4w9WgXcQ the ID is "dQw4w9WgXcQ". */
+/* The documentary on YouTube. To change it, paste the new video ID here
+   (for https://youtu.be/V7I5MCCqkts the ID is "V7I5MCCqkts"). */
 const VIDEOS = {
-  documentary: { id: "", title: "The Ladipo documentary" },
-  tenant:      { id: "", title: "Residents of No. 19, Aranotu Street" }
+  documentary: { id: "V7I5MCCqkts", title: "The Ladipo documentary" }
 };
+
+function embedHtml(vid) {
+  return `<iframe src="https://www.youtube-nocookie.com/embed/${vid.id}?autoplay=1&rel=0&playsinline=1&modestbranding=1"
+    title="${vid.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+}
 
 const SLIDE_SECONDS = 7;
 
@@ -36,6 +41,8 @@ const SLIDE_SECONDS = 7;
     const isStory = view === "story";
     home.hidden = isStory;
     story.hidden = !isStory;
+    resetPlayers();
+    schedule();
     $$(".nav a").forEach(a => a.classList.toggle("on", isStory ? a.getAttribute("href") === "#story" && !a.dataset.jump : a.hasAttribute("data-home")));
     setMenu(false);
     requestAnimationFrame(() => {
@@ -83,7 +90,11 @@ const SLIDE_SECONDS = 7;
   const slides = $$(".slide", track);
   const index = $("#cIndex");
   const thumbs = $$("#cThumbs button");
-  let i = 0, timer = null, paused = false;
+  let i = 0, timer = null, paused = false, onScreen = true;
+  // only advance while the carousel is on screen
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; schedule(); }, { threshold: 0.3 }).observe(carousel);
+  }
 
   slides.forEach((s, n) => {
     const li = document.createElement("li");
@@ -100,12 +111,16 @@ const SLIDE_SECONDS = 7;
     [...dots, ...thumbs].forEach((d, k) => d.setAttribute("aria-current", k % slides.length === i));
     // restart the ring animation
     dots.forEach(d => { const c = d.querySelector("circle"); c.style.animation = "none"; c.offsetWidth; c.style.animation = ""; });
-    const t = thumbs[i]; if (t && t.parentElement.parentElement.scrollWidth > t.parentElement.parentElement.clientWidth) t.parentElement.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+    const list = $("#cThumbs"), li = thumbs[i] && thumbs[i].parentElement;
+    if (li && list.scrollWidth > list.clientWidth) {
+      const left = list.scrollLeft + li.getBoundingClientRect().left - list.getBoundingClientRect().left;
+      list.scrollTo({ left, behavior: reduceMotion ? "auto" : "smooth" });
+    }
     schedule();
   }
   function schedule() {
     clearTimeout(timer);
-    if (!paused && !reduceMotion) timer = setTimeout(() => go(i + 1), SLIDE_SECONDS * 1000);
+    if (!paused && onScreen && !reduceMotion && !home.hidden) timer = setTimeout(() => go(i + 1), SLIDE_SECONDS * 1000);
   }
   function pause(p) { paused = p; carousel.classList.toggle("paused", p); schedule(); }
 
@@ -113,10 +128,11 @@ const SLIDE_SECONDS = 7;
   $("#cNext").addEventListener("click", () => go(i + 1));
   dots.forEach((d, n) => d.addEventListener("click", () => go(n)));
   thumbs.forEach((t, n) => t.addEventListener("click", () => go(n)));
-  carousel.addEventListener("mouseenter", () => pause(true));
-  carousel.addEventListener("mouseleave", () => pause(false));
-  carousel.addEventListener("focusin", () => pause(true));
-  carousel.addEventListener("focusout", () => pause(false));
+  // pause on mouse hover or keyboard focus (not on touch, which never "leaves")
+  carousel.addEventListener("pointerenter", e => { if (e.pointerType === "mouse") pause(true); });
+  carousel.addEventListener("pointerleave", e => { if (e.pointerType === "mouse") pause(false); });
+  carousel.addEventListener("focusin", e => { if (e.target.matches(":focus-visible")) pause(true); });
+  carousel.addEventListener("focusout", () => { if (paused) pause(false); });
   document.addEventListener("visibilitychange", () => pause(document.hidden));
   addEventListener("keydown", e => {
     if (home.hidden || !$("#lb").hidden) return;
@@ -144,6 +160,12 @@ const SLIDE_SECONDS = 7;
 
   go(0);
 
+  /* ---------- On-page video players ---------- */
+  const players = $$(".player").map(p => ({ el: p, cover: p.innerHTML }));
+  function resetPlayers() {
+    players.forEach(p => { if (!p.el.querySelector(".player-cover")) p.el.innerHTML = p.cover; });
+  }
+
   /* ---------- Lightbox: photos + videos ---------- */
   const lb = $("#lb"), stage = $("#lbStage"), cap = $("#lbCap");
   let lastFocus = null;
@@ -169,11 +191,14 @@ const SLIDE_SECONDS = 7;
     const v = e.target.closest("[data-video]");
     if (v) {
       e.preventDefault();
-      const vid = VIDEOS[v.dataset.video] || {};
-      const html = vid.id
-        ? `<iframe src="https://www.youtube-nocookie.com/embed/${vid.id}?autoplay=1&rel=0" title="${vid.title}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`
-        : `<div class="ph v4"></div><div class="lb-msg">Video coming soon</div>`;
-      openLb(html, vid.title);
+      const vid = VIDEOS[v.dataset.video] || VIDEOS.documentary;
+      const box = v.dataset.target && document.getElementById(v.dataset.target);
+      resetPlayers();
+      if (box) {
+        box.innerHTML = embedHtml(vid);
+      } else {
+        openLb(embedHtml(vid), vid.title);
+      }
       return;
     }
     const p = e.target.closest("[data-photo]");
