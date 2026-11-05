@@ -36,14 +36,15 @@ const SLIDE_SECONDS = 7;
   menuBtn.addEventListener("click", () => setMenu(!document.body.classList.contains("menu-open")));
 
   /* ---------- Views: home / story ---------- */
-  const home = $("#home"), story = $("#story");
+  const home = $("#home"), story = $("#story"), team = $("#team");
   function show(view, jump) {
     const isStory = view === "story";
-    home.hidden = isStory;
+    home.hidden = view !== "home";
     story.hidden = !isStory;
+    team.hidden = view !== "team";
     resetPlayers();
     schedule();
-    $$(".nav a").forEach(a => a.classList.toggle("on", isStory ? a.getAttribute("href") === "#story" && !a.dataset.jump : a.hasAttribute("data-home")));
+    $$(".nav a").forEach(a => a.classList.toggle("on", isStory ? a.getAttribute("href") === "#story" && !a.dataset.jump : view === "home" && a.hasAttribute("data-home")));
     setMenu(false);
     requestAnimationFrame(() => {
       const target = jump && document.getElementById(jump);
@@ -52,7 +53,7 @@ const SLIDE_SECONDS = 7;
       onScroll();
     });
   }
-  function route() { show(location.hash === "#story" ? "story" : "home"); }
+  function route() { show(location.hash === "#story" ? "story" : location.hash === "#team" ? "team" : "home"); }
 
   document.addEventListener("click", e => {
     const a = e.target.closest("a");
@@ -66,10 +67,24 @@ const SLIDE_SECONDS = 7;
       e.preventDefault();
       if (location.hash !== "#story") history.pushState(null, "", "#story");
       show("story", a.dataset.jump);
+    } else if (href === "#team") {
+      e.preventDefault();
+      if (location.hash !== "#team") history.pushState(null, "", "#team");
+      show("team");
     }
   });
   addEventListener("popstate", route);
   addEventListener("hashchange", route);
+
+  /* ---------- Team search ---------- */
+  const find = $("#teamFind"), members = $$(".member"), count = $("#teamCount");
+  find.addEventListener("input", () => {
+    const q = find.value.trim().toLowerCase();
+    let n = 0;
+    members.forEach(m => { const hit = !q || m.dataset.search.includes(q); m.hidden = !hit; if (hit) n++; });
+    count.textContent = q ? `${n} of ${members.length}` : `${members.length} members`;
+    $("#teamEmpty").hidden = n > 0;
+  });
 
   /* ---------- Reading progress + TOC ---------- */
   const bar = $("#progress");
