@@ -179,7 +179,7 @@ const SLIDE_SECONDS = 7;
     const p = e.target.closest("[data-photo]");
     if (p) {
       const fig = p.closest("figure");
-      openLb(`<div class="ph lb-photo">${p.innerHTML}</div>`, fig ? fig.querySelector("figcaption").textContent : "");
+      openLb(`<div class="ph lb-photo">${p.innerHTML}</div>`, p.dataset.cap || (fig ? fig.querySelector("figcaption").textContent : ""));
     }
   });
 

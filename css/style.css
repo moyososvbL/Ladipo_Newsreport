@@ -172,10 +172,12 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; text-wrap: balance; 
 /* Portrait photo in a wide frame: sharp photo over a blurred copy of itself */
 .ph.duo .bg { filter: blur(28px) saturate(1.15) brightness(.78); transform: scale(1.25) !important; }
 .ph.duo .fg {
-  inset: auto; top: 7%; right: clamp(96px, 10%, 150px); height: 86%; width: auto; aspect-ratio: 415 / 739;
+  inset: auto; top: 7%; right: clamp(96px, 10%, 150px); height: 86%; width: auto; max-width: 46%; object-fit: cover;
   border-radius: 18px; box-shadow: 0 30px 70px -24px rgba(0,0,0,.7);
 }
 .frame.tall { aspect-ratio: 4 / 5; max-width: 520px; }
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.pair .frame { aspect-ratio: 3 / 5; }
 .lb-photo { background: #000 !important; }
 .lb-photo img { object-fit: contain; }
 
