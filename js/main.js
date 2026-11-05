@@ -5,7 +5,7 @@
 /* The documentary on YouTube. To change it, paste the new video ID here
    (for https://youtu.be/V7I5MCCqkts the ID is "V7I5MCCqkts"). */
 const VIDEOS = {
-  documentary: { id: "V7I5MCCqkts", title: "The Ladipo documentary" }
+  documentary: { id: "V7I5MCCqkts", title: "Beyond the Spare Parts: Environmental Challenges Around Ladipo Market, Lagos" }
 };
 
 function embedHtml(vid) {
