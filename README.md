@@ -22,4 +22,4 @@ images/         Photos, logo and video thumbnails
 
 ## Deploy
 
-Connect this repo to [Netlify](https://www.netlify.com/) (Add new site → Import from GitHub). No build command; publish directory is the repo root. Every push updates the live site.
+Live at https://ladiponewsreport.vercel.app/ (Vercel, connected to this repo). Every push to `main` updates the live site.
