@@ -451,8 +451,13 @@ blockquote cite { display: block; margin-top: 14px; font-size: 15px; font-style:
 .school span { font-size: 14px; color: var(--ink-soft); }
 
 @media (max-width: 400px) {
-  .mast .logos img + img { display: none; }
-  .mast .brand-name { font-size: 15.5px; }
+  .mast .logos { gap: 4px; }
+  .mast .logos img { height: 30px; }
+  .mast .brand { gap: 8px; flex-shrink: 1; }
+  .mast .wrap { gap: 8px; }
+  .mast .brand-name { font-size: 15px; }
+  .mast .brand-sub { font-size: 11px; }
+  .menu-btn { width: 40px; height: 40px; }
 }
 
 /* ---------- Team page ---------- */
