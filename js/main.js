@@ -23,7 +23,6 @@ const SLIDE_SECONDS = 7;
 
   /* ---------- Date + year ---------- */
   const now = new Date();
-  $("#today").textContent = now.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
   $("#year").textContent = now.getFullYear();
 
   /* ---------- Mobile menu ---------- */
