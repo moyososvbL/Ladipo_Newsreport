@@ -542,6 +542,29 @@ blockquote cite { display: block; margin-top: 14px; font-size: 15px; font-style:
   .res-summary p { font-size: 17px; }
 }
 
+/* ---------- Closure page ---------- */
+#closure .lead-fig .frame { aspect-ratio: 16 / 7; }
+#closure .res-body { padding-top: 24px; }
+.sides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.side { padding: 22px; border-radius: var(--r-lg); display: grid; gap: 6px; align-content: start; min-width: 0; }
+.side.gov { background: var(--slick-soft); }
+.side.trd { background: #fbf1e1; }
+.side-who { font-family: var(--display); font-size: 13.5px; font-weight: 700; }
+.side.gov .side-who { color: var(--slick); }
+.side.trd .side-who { color: var(--oil-deep); }
+.side h3 { font-size: 18px; font-weight: 700; line-height: 1.25; }
+.side-name { margin: 0 0 6px !important; font-family: var(--display); font-size: 14px; color: var(--ink-soft); }
+.side ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; font-family: var(--display); font-size: 15px; line-height: 1.5; }
+.facts-list { list-style: none; margin: 0 0 16px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.facts-list li { padding: 14px 16px; border-radius: var(--r-md); border: 1.5px solid var(--line); font-family: var(--display); font-size: 14.5px; line-height: 1.4; color: var(--ink-soft); }
+.facts-list b { display: block; font-size: 20px; color: var(--ink); font-weight: 800; }
+.see-also { margin: 0 0 1.1em; }
+.see-also a { font-family: var(--display); font-weight: 600; font-size: 16px; color: var(--slick); text-underline-offset: 3px; }
+@media (max-width: 760px) {
+  .sides, .facts-list { grid-template-columns: minmax(0, 1fr); }
+  #closure .lead-fig .frame { aspect-ratio: 4 / 3; }
+}
+
 /* ---------- Team page ---------- */
 .project { margin: 8px 0 10px; font-family: var(--display); font-weight: 600; font-size: clamp(18px, 2vw, 22px); line-height: 1.3; color: var(--slick); max-width: 34ch; text-wrap: balance; }
 .project span { display: block; font-size: 14px; font-weight: 600; color: var(--oil-deep); margin-bottom: 4px; }

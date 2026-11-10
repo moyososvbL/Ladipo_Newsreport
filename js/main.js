@@ -35,16 +35,18 @@ const SLIDE_SECONDS = 7;
   menuBtn.addEventListener("click", () => setMenu(!document.body.classList.contains("menu-open")));
 
   /* ---------- Views: home / story ---------- */
-  const home = $("#home"), story = $("#story"), team = $("#team"), research = $("#research");
+  const home = $("#home"), story = $("#story"), team = $("#team"), research = $("#research"), closure = $("#closure");
+  const PAGES = ["team", "research", "closure"];
   function show(view, jump) {
     const isStory = view === "story";
     home.hidden = view !== "home";
     story.hidden = !isStory;
     team.hidden = view !== "team";
     research.hidden = view !== "research";
+    closure.hidden = view !== "closure";
     resetPlayers();
     schedule();
-    $$(".nav a").forEach(a => a.classList.toggle("on", isStory ? a.getAttribute("href") === "#story" && !a.dataset.jump : (view === "home" && a.hasAttribute("data-home")) || (view === "research" && a.getAttribute("href") === "#research")));
+    $$(".nav a").forEach(a => a.classList.toggle("on", isStory ? a.getAttribute("href") === "#story" && !a.dataset.jump : (view === "home" && a.hasAttribute("data-home")) || (PAGES.includes(view) && a.getAttribute("href") === "#" + view)));
     setMenu(false);
     requestAnimationFrame(() => {
       const target = jump && document.getElementById(jump);
@@ -53,7 +55,7 @@ const SLIDE_SECONDS = 7;
       onScroll();
     });
   }
-  function route() { show(location.hash === "#story" ? "story" : location.hash === "#team" ? "team" : location.hash === "#research" ? "research" : "home"); }
+  function route() { show(location.hash === "#story" ? "story" : PAGES.includes(location.hash.slice(1)) ? location.hash.slice(1) : "home"); }
 
   document.addEventListener("click", e => {
     const a = e.target.closest("a");
@@ -67,7 +69,7 @@ const SLIDE_SECONDS = 7;
       e.preventDefault();
       if (location.hash !== "#story") history.pushState(null, "", "#story");
       show("story", a.dataset.jump);
-    } else if (href === "#team" || href === "#research") {
+    } else if (PAGES.includes((href || "").slice(1))) {
       e.preventDefault();
       if (location.hash !== href) history.pushState(null, "", href);
       show(href.slice(1));
