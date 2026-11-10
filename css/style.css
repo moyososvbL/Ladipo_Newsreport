@@ -413,6 +413,31 @@ blockquote cite { display: block; margin-top: 14px; font-size: 15px; font-style:
 .roles b { font-family: var(--display); font-size: 16.5px; font-weight: 700; }
 .roles span { font-family: var(--display); font-size: 15px; line-height: 1.5; color: var(--ink-soft); }
 
+.study { margin: 32px 0; padding: clamp(20px, 3vw, 30px); border-radius: var(--r-xl); background: var(--tile); display: grid; gap: 14px; }
+.study-kicker { font-family: var(--display); font-size: 14px; font-weight: 600; color: var(--oil-deep); }
+.study h3 { font-size: clamp(21px, 2.4vw, 26px); font-weight: 800; letter-spacing: -.02em; margin-top: -6px; }
+.study p { margin: 0; }
+.study-method { font-family: var(--display); font-size: 15.5px; line-height: 1.55; color: var(--ink-soft); }
+.metal-chart { margin: 4px 0 0; padding: 18px 18px 12px; background: var(--paper); border-radius: var(--r-md); display: grid; gap: 10px; }
+.metal-chart figcaption { font-size: 13.5px; margin-bottom: 4px; }
+.bar-row, .bar-axis { display: grid; grid-template-columns: 62px minmax(0, 1fr) 48px; align-items: center; gap: 12px; font-family: var(--display); }
+.bar-name { font-size: 15px; font-weight: 600; }
+.bar-track { height: 22px; position: relative; background-image: linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: calc(100% / 3.5) 100%; }
+.bar { position: absolute; left: 0; top: 0; bottom: 0; background: var(--ink-faint); border-radius: 0 4px 4px 0; }
+.bar-row.hi .bar { background: var(--oil); }
+.bar-val { font-size: 15px; font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+.bar-row:not(.hi) .bar-name, .bar-row:not(.hi) .bar-val { color: var(--ink-soft); font-weight: 500; }
+.bar-axis .ticks { position: relative; height: 16px; font-size: 12px; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+.bar-axis i { position: absolute; font-style: normal; transform: translateX(-50%); }
+.bar-axis i:nth-child(1) { left: 0; transform: none; } .bar-axis i:nth-child(2) { left: 28.57%; } .bar-axis i:nth-child(3) { left: 57.14%; } .bar-axis i:nth-child(4) { left: 85.71%; }
+.study-facts { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 10px; font-family: var(--display); font-size: 15.5px; line-height: 1.5; color: var(--ink-soft); }
+.study-facts li { padding-left: 18px; position: relative; }
+.study-facts li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; border-radius: 50%; background: var(--oil); }
+.study-facts b { color: var(--ink); font-weight: 600; }
+.study-exposure { font-family: var(--display); font-size: 15.5px; line-height: 1.5; padding: 14px 16px; border-radius: var(--r-md); background: var(--slick-soft); color: var(--ink); }
+.study-exposure b { color: var(--slick); }
+.study-source { font-family: var(--display); font-size: 13px; color: var(--ink-faint); }
+
 .sources { margin-top: 24px; border-top: 1px solid var(--line); }
 .sources h2 { font-size: 22px; margin-top: 8px; }
 .sources ol { margin: 0; padding-left: 22px; display: grid; gap: 10px; font-family: var(--display); font-size: 15px; line-height: 1.5; color: var(--ink-soft); }
