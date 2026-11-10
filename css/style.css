@@ -459,7 +459,7 @@ blockquote cite { display: block; margin-top: 14px; font-size: 15px; font-style:
 .player-label { position: absolute; z-index: 2; left: 20px; bottom: 18px; color: #fff; font-family: var(--display); font-weight: 600; font-size: 17px; }
 .player-fig { margin: 36px 0; }
 .player-time { position: absolute; z-index: 2; right: 16px; bottom: 16px; color: #fff; font-family: var(--display); font-weight: 600; font-size: 13.5px; background: rgba(0,0,0,.55); padding: 4px 9px; border-radius: 7px; font-variant-numeric: tabular-nums; }
-.watch-inline { margin: 4px 0 28px; }
+.watch-inline { margin: 4px 0 28px; white-space: normal; max-width: 100%; text-align: left; }
 .watch-inline::before { content: ""; border-left: 9px solid currentColor; border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
 .video-band .player { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
 .card-play { position: absolute; z-index: 2; left: 50%; top: 50%; width: 52px; height: 52px; margin: -26px 0 0 -26px; border-radius: 50%; background: rgba(255,255,255,.95); }
@@ -485,6 +485,63 @@ blockquote cite { display: block; margin-top: 14px; font-size: 15px; font-style:
   .menu-btn { width: 40px; height: 40px; }
 }
 
+@media (max-width: 1180px) {
+  .nav, .mast .btn { display: none; }
+  .menu-btn { display: grid; }
+}
+
+/* ---------- Research page ---------- */
+.res-head { max-width: 900px; padding-block: 48px 28px; display: grid; gap: 16px; }
+.res-head .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.res-head h1 { font-size: clamp(28px, 4vw, 46px); font-weight: 800; letter-spacing: -.03em; line-height: 1.08; }
+.res-authors { margin: 0; font-family: var(--display); font-size: 16px; font-weight: 600; }
+.res-journal { margin: -8px 0 0; font-family: var(--display); font-size: 14.5px; color: var(--ink-soft); }
+.res-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.res-body { max-width: 760px; padding-bottom: 40px; }
+.res-summary { padding: 24px 26px; border-radius: var(--r-xl); background: var(--ink); color: #fff; display: grid; gap: 8px; }
+.res-summary p { margin: 0; font-size: 18.5px; line-height: 1.6; }
+.res-label { font-family: var(--display); font-size: 14px; font-weight: 600; color: var(--oil); }
+.res-sec { padding-top: 40px; }
+.res-sec h2 { font-size: clamp(25px, 3vw, 32px); font-weight: 800; letter-spacing: -.025em; margin-bottom: 16px; }
+.res-sec p { margin: 0 0 1.05em; }
+.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 12px; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 2px 16px; padding: 16px 18px; border-radius: var(--r-md); border: 1.5px solid var(--line); }
+.steps li::before { content: counter(s); grid-row: span 2; width: 36px; height: 36px; border-radius: 50%; background: var(--slick-soft); color: var(--slick); display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 16px; }
+.steps b { font-family: var(--display); font-size: 17px; }
+.steps span { font-family: var(--display); font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
+.res-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 22px; }
+.res-stats div { padding: 18px; border-radius: var(--r-lg); background: var(--tile); display: grid; gap: 4px; align-content: start; min-width: 0; }
+.res-stats div.hot { background: var(--oil); color: #fff; }
+.rs-label { font-family: var(--display); font-size: 14px; font-weight: 600; color: var(--ink-soft); }
+.res-stats .hot .rs-label, .res-stats .hot .rs-unit { color: rgba(255,255,255,.85); }
+.res-stats b { font-family: var(--display); font-weight: 800; font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.res-stats b i { font-style: normal; font-weight: 400; opacity: .5; }
+.rs-unit { font-family: var(--display); font-size: 13px; line-height: 1.4; color: var(--ink-soft); }
+.res-chart { background: var(--tile); margin: 24px 0 16px; }
+.res-chart .bar-row { grid-template-columns: 136px minmax(0, 1fr) 44px; }
+.res-chart .bar-axis { grid-template-columns: 136px minmax(0, 1fr) 44px; }
+.res-chart .bar-name { white-space: nowrap; }
+.table-wrap { overflow-x: auto; margin: 0 0 20px; }
+.data-table { width: 100%; border-collapse: collapse; font-family: var(--display); font-size: 15px; font-variant-numeric: tabular-nums; }
+.data-table caption { text-align: left; font-size: 13.5px; color: var(--ink-soft); padding-bottom: 8px; }
+.data-table th, .data-table td { padding: 10px 12px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.data-table th:first-child, .data-table td:first-child, .data-table th:nth-child(2), .data-table td:nth-child(2) { text-align: left; }
+.data-table th { font-weight: 600; color: var(--ink-soft); font-size: 13.5px; }
+.data-table td:nth-child(4) { font-weight: 700; color: var(--oil-deep); }
+.chips { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li { font-family: var(--display); font-size: 15px; padding: 9px 14px; border-radius: 999px; background: var(--slick-soft); color: var(--slick); font-weight: 600; }
+.res-cite { margin-top: 44px; padding: 22px 24px; border-radius: var(--r-lg); border: 1.5px solid var(--line); display: grid; gap: 10px; font-family: var(--display); font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); }
+.res-cite p { margin: 0; }
+.res-cite b { color: var(--ink); margin-right: 6px; }
+.res-cite a:not(.back) { color: var(--slick); overflow-wrap: anywhere; }
+.study-source a { color: var(--slick); font-weight: 600; }
+@media (max-width: 640px) {
+  .res-stats { grid-template-columns: minmax(0, 1fr); }
+  .res-chart .bar-row, .res-chart .bar-axis { grid-template-columns: 92px minmax(0, 1fr) 40px; }
+  .res-chart .bar-name { font-size: 13px; white-space: normal; }
+  .res-summary p { font-size: 17px; }
+}
+
 /* ---------- Team page ---------- */
 .project { margin: 8px 0 10px; font-family: var(--display); font-weight: 600; font-size: clamp(18px, 2vw, 22px); line-height: 1.3; color: var(--slick); max-width: 34ch; text-wrap: balance; }
 .project span { display: block; font-size: 14px; font-weight: 600; color: var(--oil-deep); margin-bottom: 4px; }
@@ -502,7 +559,7 @@ blockquote cite { display: block; margin-top: 14px; font-size: 15px; font-style:
 
 .team-tools { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 12px 0 18px; }
 .team-tools input {
-  flex: 1 1 280px; max-width: 460px; font: 500 16px var(--display); color: var(--ink);
+  flex: 1 1 220px; min-width: 0; width: 100%; max-width: 460px; font: 500 16px var(--display); color: var(--ink);
   padding: 13px 18px 13px 44px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--paper);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%23536170' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='8' cy='8' r='6'/%3E%3Cpath d='M12.5 12.5L17 17'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: 16px center;
